@@ -1,0 +1,244 @@
+GaSQL> select * from Category;
+
+CATEGORYID CATEGORYNAME                                                                                                                                                                                 
+---------- --------------------                                                                                                                                                                         
+1          Television                                                                                                                                                                                   
+2          Speakers                                                                                                                                                                                     
+3          Accessories                                                                                                                                                                                  
+4          Electronics                                                                                                                                                                                  
+5          Gaming Accessories                                                                                                                                                                           
+6          Mobile Phones                                                                                                                                                                                
+7          Airpods                                                                                                                                                                                      
+
+7 rows selected.
+
+SQL> Select * from Vendor;
+
+VENDORID VENDORNAME           VENDORADDRESS        CONTACTNO                                                                                                                                            
+-------- -------------------- -------------------- ---------------                                                                                                                                      
+V01      Samsung              Dallas               1234567890                                                                                                                                           
+V02      Soundmaster          Sydney               5555679876                                                                                                                                           
+V03      LG                   Toronto              15991256                                                                                                                                             
+V04      Agilis electronics   Dallas               7869870912                                                                                                                                           
+V05      Gamer Electronics    Portland             2354519876                                                                                                                                           
+V06      ansay Mobiles        Austin               3461209575                                                                                                                                           
+V07      Boat                 Adelaide             6716349823                                                                                                                                           
+
+7 rows selected.
+
+SQL> select * from Product;
+
+PRODUCTID  PRODUCTNAME       DESCRIPTION                                        UNITPRICE STOCKLEVEL CATEGORYID VENDORID                                                                                
+---------- ----------------- -------------------------------------------------- --------- ---------- ---------- --------                                                                                
+P01        Samsung Neo QLED  Discover the latest 8k samsung neo QLED Technology   1197.99         60 1          V01                                                                                     
+P02        Samsung S23       Experience the latest galaxy device                   350.99         54 6          V01                                                                                     
+P03        JBL Speaker       Good quality sound                                    250.56         40 2          V02                                                                                     
+P04        iphone 15         best quality phone                                   1120.00         70 6          V04                                                                                     
+P05        laptop            Best quality laptop                                  1265.22         55 3          V04                                                                                     
+P06        Airpod            Background noise cancelation                          350.00         99 7          V07                                                                                     
+P07        GTX 3060ti        Smooth gaming                                        1253.56          8 5          V05                                                                                     
+P08        POCO X4           Enjoy the new technology                              125.26          3 6          V06                                                                                     
+P09        PS5               Advance gaming                                        786.00         20 5          V04                                                                                     
+P10        VR box            Enjoy the virtual reality                             560.00         75 5          V04                                                                                     
+
+10 rows selected.
+
+SQL> select * from ProductAvailability;
+
+PRODUCTID  PRODUCTNAME       STOCKQUANTITY AVAILABILITYSTATUS                                                                                                                                           
+---------- ----------------- ------------- --------------------                                                                                                                                         
+P01        Samsung Neo QLED             57 Instock                                                                                                                                                      
+P02        Samsung S23                  51 Instock                                                                                                                                                      
+P03        JBL Speaker                  25 Instock                                                                                                                                                      
+P04        iphone 15                    60 Instock                                                                                                                                                      
+P05        laptop                        0 Outofstock                                                                                                                                                   
+P06        Airpod                       82 Instock                                                                                                                                                      
+P07        GTX 3060ti                    0 Outofstock                                                                                                                                                   
+P08        POCO X4                       0 Outofstock                                                                                                                                                   
+P09        PS5                           0 Outofstock                                                                                                                                                   
+P10        VR box                       70 Instock                                                                                                                                                      
+
+10 rows selected.
+
+SQL> select * from Customer;
+
+CUSTOMERID FULLNAME                  ADDRESS                   DISCOUNTRATE    CATEGORY                                                                                                                 
+---------- ------------------------- ------------------------- --------------- ----------                                                                                                               
+C01        Eyan Owen                 579 RainbowDrive          0%              Regular                                                                                                                  
+C02        Johnson Nirvik            1932 Cherry Camp Road     0%              Regular                                                                                                                  
+C03        Endrick Paul              2663 Stoney Lane          0%              Regular                                                                                                                  
+C04        Johnson Linda             3641 Freed Drive          5%              Staff                                                                                                                    
+C05        Reece James               39 Northgate street       5%              Staff                                                                                                                    
+C06        Lauren James              11 Hudson St              10%             VIP                                                                                                                      
+C07        Mason Mount               98 Consett Rd             10%             VIP                                                                                                                      
+C08        Malung Sarr               34 Dossiter Street        5%              Staff                                                                                                                    
+C09        Koju Harold               10 Duff Street            0%              Regular                                                                                                                  
+C10        Joe Ryan                  27 CorioStreet            5%              Staff                                                                                                                    
+
+10 rows selected.
+
+SQL> select * from PaymentOption;
+
+PAYMENTOPTIONID OPTIONNAME                                                                                                                                                                              
+--------------- --------------------                                                                                                                                                                    
+701             Credit/Debit card                                                                                                                                                                       
+702             e-wallet                                                                                                                                                                                
+703             Cash-on-Delivery                                                                                                                                                                        
+
+SQL> select * from Orders;
+
+ORDERID ORDERDATE TOTALAMOUNT CUSTOMERID PAYMENTOPTIONID                                                                                                                                                
+------- --------- ----------- ---------- ---------------                                                                                                                                                
+O1      02-MAY-23        1800 C04        701                                                                                                                                                            
+O2      05-MAY-23         350 C01        703                                                                                                                                                            
+O3      15-MAY-23      911.26 C10        702                                                                                                                                                            
+O4      23-MAY-23     1720.99 C02        701                                                                                                                                                            
+O5      01-JUN-23     1253.56 C03        702                                                                                                                                                            
+O6      23-JUN-23     3078.56 C06        702                                                                                                                                                            
+O7      23-JUN-23     1250.55 C06        702                                                                                                                                                            
+O8      06-JUL-23        1500 C07        701                                                                                                                                                            
+O9      05-AUG-23      450.22 C04        701                                                                                                                                                            
+O10     07-AUG-23      345.65 C03        703                                                                                                                                                            
+O11     07-AUG-23     2345.77 C01        702                                                                                                                                                            
+
+11 rows selected.
+
+SQL> select * from invoice;
+
+INVOICEID  ORDERID PAYMENTOPTIONID CUSTOMERID TOTALAMOUNT DISCOUNTAMOUNT FINALAMOUNT INVOICEDATE                                                                                                        
+---------- ------- --------------- ---------- ----------- -------------- ----------- -----------                                                                                                        
+I1         O1      701             C04               1800             90     1710.00 03-MAY-23                                                                                                          
+I2         O2      703             C01                350              0      350.00 15-MAY-23                                                                                                          
+I3         O3      702             C10             911.26          45.56      865.70 23-MAY-23                                                                                                          
+I4         O4      701             C02            1720.99              0     1720.99 27-MAY-23                                                                                                          
+I5         O5      702             C03            1253.56              0     1253.56 01-JUN-23                                                                                                          
+I6         O6      702             C06            3078.56         307.85     2770.70 23-MAY-23                                                                                                          
+I7         O7      702             C06            1250.55         125.05     1125.49 14-JUN-23                                                                                                          
+I8         O8      701             C07               1500            150     1350.00 30-JUN-23                                                                                                          
+I9         O9      701             C04             450.22          22.51      427.70 05-JUL-23                                                                                                          
+I10        O10     703             C03             345.65              0      345.65 02-MAY-23                                                                                                          
+I11        O11     702             C01            2345.77              0     2345.77 06-JUL-23                                                                                                          
+
+11 rows selected.
+
+SQL> select * from OrderProduct;
+
+ORDERID PRODUCTID    QUANTITY UNITPRICE                                                                                                                                                                 
+------- ---------- ---------- ---------                                                                                                                                                                 
+O2      P04                 1   1120.00                                                                                                                                                                 
+O1      P09                 2    786.00                                                                                                                                                                 
+O3      P02                 5    350.99                                                                                                                                                                 
+O4      P07                 4   1253.56                                                                                                                                                                 
+O5      P10                 2    560.00                                                                                                                                                                 
+O5      P08                 2    125.26                                                                                                                                                                 
+O6      P03                 1    250.56                                                                                                                                                                 
+O7      P05                 1   1265.22                                                                                                                                                                 
+O7      P01                 1   1197.99                                                                                                                                                                 
+O8      P06                 4    350.00                                                                                                                                                                 
+O9      P06                 5    350.00                                                                                                                                                                 
+O10     P01                 2   1197.99                                                                                                                                                                 
+O10     P03                 1    250.00                                                                                                                                                                 
+O11     P09                 1    786.00                                                                                                                                                                 
+
+14 rows selected.
+
+
+
+SQL> select * from Customer where Category = 'Staff';
+
+CUSTOMERID FULLNAME                  ADDRESS                   DISCOUNTRATE    CATEGORY                                                                                                                 
+---------- ------------------------- ------------------------- --------------- ----------                                                                                                               
+C04        Johnson Linda             3641 Freed Drive          5%              Staff                                                                                                                    
+C05        Reece James               39 Northgate street       5%              Staff                                                                                                                    
+C08        Malung Sarr               34 Dossiter Street        5%              Staff                                                                                                                    
+C10        Joe Ryan                  27 CorioStreet            5%              Staff                                                                                                                    
+
+SQL> select * from Orders where OrderDate >= to_date('2023-05-01', 'YYYY-MM-DD') and OrderDate <= to_date('2023-05-28', 'YYYY-MM-DD');
+
+ORDERID ORDERDATE TOTALAMOUNT CUSTOMERID PAYMENTOPTIONID                                                                                                                                                
+------- --------- ----------- ---------- ---------------                                                                                                                                                
+O1      02-MAY-23        1800 C04        701                                                                                                                                                            
+O2      05-MAY-23         350 C01        703                                                                                                                                                            
+O3      15-MAY-23      911.26 C10        702                                                                                                                                                            
+O4      23-MAY-23     1720.99 C02        701                                                                                                                                                            
+
+SQL> select Orders.OrderID, Orders.OrderDate, Orders.TotalAmount, Customer.CustomerID, Customer.Fullname from Customer left join Orders on Customer.CustomerId = Orders.CustomerID;
+
+ORDERID ORDERDATE TOTALAMOUNT CUSTOMERID FULLNAME                                                                                                                                                       
+------- --------- ----------- ---------- -------------------------                                                                                                                                      
+O1      02-MAY-23        1800 C04        Johnson Linda                                                                                                                                                  
+O2      05-MAY-23         350 C01        Eyan Owen                                                                                                                                                      
+O3      15-MAY-23      911.26 C10        Joe Ryan                                                                                                                                                       
+O4      23-MAY-23     1720.99 C02        Johnson Nirvik                                                                                                                                                 
+O5      01-JUN-23     1253.56 C03        Endrick Paul                                                                                                                                                   
+O6      23-JUN-23     3078.56 C06        Lauren James                                                                                                                                                   
+O7      23-JUN-23     1250.55 C06        Lauren James                                                                                                                                                   
+O8      06-JUL-23        1500 C07        Mason Mount                                                                                                                                                    
+O9      05-AUG-23      450.22 C04        Johnson Linda                                                                                                                                                  
+O10     07-AUG-23      345.65 C03        Endrick Paul                                                                                                                                                   
+O11     07-AUG-23     2345.77 C01        Eyan Owen                                                                                                                                                      
+                              C08        Malung Sarr                                                                                                                                                    
+                              C05        Reece James                                                                                                                                                    
+                              C09        Koju Harold                                                                                                                                                    
+
+14 rows selected.
+
+SQL> select * from productavailability where substr(productname, 2, 1) = 'a' and stockquantity > 50;
+
+PRODUCTID  PRODUCTNAME       STOCKQUANTITY AVAILABILITYSTATUS                                                                                                                                           
+---------- ----------------- ------------- --------------------                                                                                                                                         
+P01        Samsung Neo QLED             57 Instock                                                                                                                                                      
+P02        Samsung S23                  51 Instock   
+                                                                                                                                                   
+
+SQL> select Customer.CustomerID, Customer.Fullname from Customer join Orders on Customer.CustomerID = Orders.CustomerID where Orders.OrderDate = (select max(OrderDate) from Orders);
+
+CUSTOMERID FULLNAME                                                                                                                                                                                     
+---------- -------------------------                                                                                                                                                                    
+C01        Eyan Owen                                                                                                                                                                                    
+C03        Endrick Paul                                                                                                                                                                                 
+
+
+
+SQL> select to_char(OrderDate, 'YYYY-MM') as month, sum(TotalAmount) as TotalRevenue from Orders group by to_char(OrderDate, 'YYYY-MM') order by to_char(OrderDate, 'YYYY-MM');
+
+MONTH   TOTALREVENUE                                                                                                                                                                                    
+------- ------------                                                                                                                                                                                    
+2023-05      4782.25                                                                                                                                                                                    
+2023-06      5582.67                                                                                                                                                                                    
+2023-07         1500                                                                                                                                                                                    
+2023-08      3141.64                                                                                                                                                                                    
+
+
+SQL> select * from Orders where TotalAmount >= (select avg(TotalAmount) from Orders);
+
+ORDERID ORDERDATE TOTALAMOUNT CUSTOMERID PAYMENTOPTIONID                                                                                                                                                
+------- --------- ----------- ---------- ---------------                                                                                                                                                
+O1      02-MAY-23        1800 C04        701                                                                                                                                                            
+O4      23-MAY-23     1720.99 C02        701                                                                                                                                                            
+O6      23-JUN-23     3078.56 C06        702                                                                                                                                                            
+O8      06-JUL-23        1500 C07        701                                                                                                                                                            
+O11     07-AUG-23     2345.77 C01        702                                                                                                                                                            
+
+SQL> select Vendor.VendorID, Vendor.VendorName, count(Product.ProductID) as ProductCount from Vendor inner join Product on Vendor.VendorID = Product.VendorID group by Vendor.VendorID, Vendor.VendorName having count(Product.ProductID) > 3;
+
+VENDORID VENDORNAME           PRODUCTCOUNT                                                                                                                                                              
+-------- -------------------- ------------                                                                                                                                                              
+V04      Agilis electronics              4                                                                                                                                                              
+
+SQL> select Product.ProductID, ProductName as Productname, count(OrderProduct.ProductID) as Ordercount from Product join OrderProduct on Product.ProductID = OrderProduct.ProductID group by Product.ProductID, Productname order by Ordercount desc fetch first 3 rows only;
+
+PRODUCTID  PRODUCTNAME       ORDERCOUNT                                                                                                                                                                 
+---------- ----------------- ----------                                                                                                                                                                 
+P09        PS5                        2                                                                                                                                                                 
+P03        JBL Speaker                2                                                                                                                                                                 
+P01        Samsung Neo QLED           2                                                                                                                                                                 
+
+                                                                                                                                                                                                        
+SQL> select Customer.CustomerID, Fullname as Customername, sum(Product.Unitprice * OrderProduct.Quantity) as TotalSpending from Customer join Orders on Customer.CustomerID = Orders.CustomerID join OrderProduct on Orders.OrderID = OrderProduct.OrderID join PRoduct on OrderPRoduct.ProductID = Product.ProductID where extract(month from Orders.OrderDate) = 8 group by Customer.CustomerID, Fullname order by Totalspending desc fetch first 1 row only;
+
+CUSTOMERID CUSTOMERNAME    TOTALSPENDING                                                            
+---------- --------------- -------------                                                            
+C03        Endrick Paul          2646.54                                                            
+
+SQL> spool off;
